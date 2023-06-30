@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-API_URL = "your-api-url"
+API_URL = ""
 
 # Define the intents for the bot
 intents = discord.Intents.default()
@@ -29,6 +29,8 @@ async def on_message(message):
 
     if message.content.startswith("!logue") or message.content.startswith("@Polylogue"):
         print("User interacted with bot")
+
+    await bot.process_commands(message)
 
 
 @bot.command()
